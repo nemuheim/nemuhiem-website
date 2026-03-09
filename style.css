@@ -66,3 +66,30 @@ body {
     margin-top: 20px;
     font-size: 1rem;
 }
+
+/* ABOUTページ用スタイル */
+.about-container {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.profile-box {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 10px; /* 少し角丸に */
+    overflow: hidden;
+}
+
+.profile-text {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.sns-icon {
+    width: 40px;
+    margin-bottom: 10px;
+}
