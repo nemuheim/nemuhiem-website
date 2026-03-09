@@ -1,0 +1,68 @@
+/* 全体の基本設定 */
+body {
+    background-color: #2D5A27; /* 背景グリーン */
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Futura', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ヘッダーとロゴリンク */
+.logo-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin: 20px 0;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 5vw; /* ブラウザ幅に合わせてサイズが変動 */
+    margin: 0;
+}
+
+/* 部屋のボックス（正方形） */
+.room-container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.room-box {
+    position: relative;
+    width: 80vw;
+    max-width: 600px;
+    height: 80vw;
+    max-height: 600px;
+    background-color: #3E7C37; /* 壁のグリーン */
+    border: 2px solid white;
+}
+
+/* 各画像アイテムの配置 */
+.item {
+    position: absolute;
+    width: 20%;
+    cursor: pointer;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+}
+
+/* 配置の微調整用（場所は後で数値を変えてください） */
+.koala { top: 30%; left: 40%; }
+.art { top: 10%; left: 10%; }
+.bag { bottom: 10%; right: 10%; }
+.rug { bottom: 5%; left: 30%; }
+.phone { bottom: 30%; left: 10%; }
+
+.copyright {
+    margin-top: 20px;
+    font-size: 1rem;
+}
