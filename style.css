@@ -1,6 +1,8 @@
-/* 全体の基本設定 */
+/* ==================================================
+   全ページ共通設定
+   ================================================== */
 body {
-    background-color: #2D5A27; /* 背景グリーン */
+    background-color: #2D5A27; /* 統一されたグリーン */
     margin: 0;
     padding: 0;
     color: white;
@@ -10,7 +12,6 @@ body {
     align-items: center;
 }
 
-/* ヘッダーとロゴリンク */
 .logo-link {
     text-decoration: none;
     color: white;
@@ -20,14 +21,16 @@ body {
 
 .logo {
     font-weight: bold;
-    font-size: 5vw; /* ブラウザ幅に合わせてサイズが変動 */
+    font-size: 5vw;
     margin: 0;
 }
 
-/* 部屋のボックス（正方形） */
+/* ==================================================
+   HOME（トップページ）用
+   ================================================== */
 .room-container {
     width: 90%;
-    max-width: 800px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,35 +42,21 @@ body {
     max-width: 600px;
     height: 80vw;
     max-height: 600px;
-    background-color: #3E7C37; /* 壁のグリーン */
+    background-color: #3E7C37;
     border: 2px solid white;
 }
 
-/* 各画像アイテムの配置 */
-.item {
-    position: absolute;
-    width: 20%;
-    cursor: pointer;
-}
-
-.item img {
-    width: 100%;
-    height: auto;
-}
-
-/* 配置の微調整用（場所は後で数値を変えてください） */
+.item { position: absolute; width: 20%; cursor: pointer; }
+.item img { width: 100%; height: auto; }
 .koala { top: 30%; left: 40%; }
 .art { top: 10%; left: 10%; }
 .bag { bottom: 10%; right: 10%; }
 .rug { bottom: 5%; left: 30%; }
 .phone { bottom: 30%; left: 10%; }
 
-.copyright {
-    margin-top: 20px;
-    font-size: 1rem;
-}
-
-/* ABOUTページ用スタイル */
+/* ==================================================
+   ABOUT / CONTACT 用
+   ================================================== */
 .about-container {
     width: 80%;
     max-width: 600px;
@@ -75,21 +64,48 @@ body {
     padding-bottom: 50px;
 }
 
-.profile-box {
+.profile-box, .contact-box {
     width: 200px;
     height: 200px;
     background-color: white;
     margin: 20px auto;
-    border-radius: 10px; /* 少し角丸に */
+    border-radius: 10px;
     overflow: hidden;
 }
 
-.profile-text {
-    text-align: left;
-    margin-top: 30px;
+.profile-text { text-align: left; margin-top: 30px; }
+.email-address a { color: white; text-decoration: underline; }
+
+/* ==================================================
+   GALLERY 用
+   ================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+    width: 80vw;
+    max-width: 600px;
 }
 
-.sns-icon {
-    width: 40px;
-    margin-bottom: 10px;
+.filter-buttons { margin-bottom: 20px; }
+.filter-btn {
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
 }
+
+/* ==================================================
+   FORTUNE 用
+   ================================================== */
+#fortune-box {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+#fortune-box img { width: 100%; }
