@@ -14,9 +14,16 @@ body {
 .logo { font-size: 2rem; margin: 20px 0; color: white; text-decoration: none; }
 
 /* ==================================================
-   2. HOME用
+   HOME（トップページ）用
    ================================================== */
-.room-container { width: 90%; max-width: 600px; }
+.room-container {
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .room-box {
     position: relative;
     width: 80vw;
@@ -24,11 +31,16 @@ body {
     height: 80vw;
     max-height: 600px;
     border: 2px solid white;
+    /* 背景画像をCSS側でも指定したい場合は以下のように記述 */
     background-size: cover;
     background-position: center;
 }
-.item { position: absolute; width: 20%; cursor: pointer; transition: 0.3s; }
-.item:hover { transform: scale(1.1); }
+
+.item { 
+    position: absolute; 
+    width: 20%; 
+    cursor: pointer; 
+}
 .item img { width: 100%; height: auto; }
 /* 配置調整（必要に応じて数値を変更してください） */
 .about-img { top: 10%; left: 10%; }
