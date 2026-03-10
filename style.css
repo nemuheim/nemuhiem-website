@@ -36,35 +36,36 @@ body {
     align-items: center;
 }
 
+/* 背景を表示する親の箱 */
 .room-box {
-    /* 背景画像を入れる場合 */
-    background-image: url('images/room-bg.png'); 
-    background-size: cover;
-    position: relative;
-    width: 80vw;
-    max-width: 600px;
-    height: 80vw;
-    max-height: 600px;
-    /* ...その他の設定... */
+    position: relative; /* 子要素の配置の基準点になる */
+    width: 600px;       /* 背景画像のサイズに合わせて調整 */
+    height: 600px;      /* 正方形なら幅と同じ値 */
+    background-image: url('images/room-bg.png');
+    background-size: contain; /* 画像が全部収まるようにする */
+    background-repeat: no-repeat;
+    margin: 0 auto;     /* 画面中央寄せ */
 }
-  /* 背景の資格をCSSで作成する場合 
-.room-box {
-    position: relative;
-    width: 80vw;
-    max-width: 600px;
-    height: 80vw;
-    max-height: 600px;
-    background-color: #3E7C37;
-    border: 2px solid white;
-}*/
 
-.item { position: absolute; width: 20%; cursor: pointer; }
-.item img { width: 100%; height: auto; }
-.about { top: 30%; left: 40%; }
-.gallery { top: 10%; left: 10%; }
-.onlineshop { bottom: 10%; right: 10%; }
-.fortune { bottom: 5%; left: 30%; }
-.contact { bottom: 30%; left: 10%; }
+/* 全リンク共通の設定 */
+.item {
+    position: absolute; /* 親からの距離で位置を決める */
+    display: block;
+    width: 100px;       /* 各アイコン画像の幅に合わせて調整 */
+}
+
+/* それぞれの具体的な位置（％で指定すると画面サイズが変わっても崩れにくいです） */
+.about { top: 10%; left: 10%; }
+.gallery { top: 10%; left: 70%; }
+.onlineshop { top: 40%; left: 40%; }
+.fortune { top: 70%; left: 10%; }
+.contact { top: 70%; left: 70%; }
+
+/* アイコン画像が親の幅からはみ出さないように */
+.item img {
+    width: 100%;
+    height: auto;
+}
 
 /* ==================================================
    ABOUT / CONTACT 用
