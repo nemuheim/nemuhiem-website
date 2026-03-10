@@ -55,7 +55,6 @@ body {
 .item {
     position: absolute; /* 親（room-box）に対して自由に配置 */
     display: block;
-    width: 20%;         /* 親の幅の20%にする（これで小さくなります） */
 }
 
 /* 中身の画像を枠にフィットさせる */
@@ -72,6 +71,13 @@ body {
 .about { top: 40%; left: 30%; }
 .onlineshop { bottom: 20%; left: 20%; }
 .fortune { bottom: 20%; right: 20%; }
+
+/* 個別のサイズ指定（％で指定すると親の大きさに合わせて自動計算されます） */
+.about      { width: 50%; }
+.gallery    { width: 50%; }
+.onlineshop { width: 20%; }
+.fortune    { width: 25%; }
+.contact    { width: 30%; }
 
 /* アイコン画像が親の幅からはみ出さないように */
 .item img {
