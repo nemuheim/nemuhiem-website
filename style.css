@@ -3,7 +3,7 @@
    ================================================== */
 body {
     background-color: #186A49; /* 統一されたグリーン */
-    margin: 0;
+    margin: 10;
     padding: 0;
     color: white;
     font-family: 'Futura', sans-serif;
@@ -21,7 +21,7 @@ body {
 
 .logo {
     font-weight: bold;
-    font-size: 5vw;
+    font-size: 10vw;
     margin: 0;
 }
 
@@ -67,11 +67,11 @@ body {
 /* 各画像の位置（0〜100%で指定） */
 /* 各リンクの位置を「指定した配置」に合わせました */
 /* 個別のサイズ指定（％で指定すると親の大きさに合わせて自動計算されます） */
-.gallery { top: 10%; left: 20%; width:100%}
-.contact { top: 25%; right: 20%;  width:100%}
-.about { top: 40%; left: 30%; width:100% }
-.onlineshop { bottom: 20%; left: 20%; width:100% }
-.fortune { bottom: 20%; right: 20%;  width:100%}
+.gallery { top: 10%; left: 20%; width:10%}
+.contact { top: 25%; right: 20%;  width:10%}
+.about { top: 40%; left: 30%; width:10% }
+.onlineshop { bottom: 20%; left: 20%; width:10% }
+.fortune { bottom: 20%; right: 20%;  width:10%}
 
 
 /* ==================================================
