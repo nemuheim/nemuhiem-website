@@ -1,25 +1,28 @@
 function startFortune() {
     const koalaImg = document.getElementById('koala-img');
-    
+    const fortuneBox = document.getElementById('fortune-box');
+
     // 1. アニメーションGIFに変更
     koalaImg.src = "images/fortune-animation.gif";
-    
-    // 2. 2秒後にランダムな結果画像を表示（res1.png ～ res12.png を想定）
+
+    // 2. 2秒後に画像だけを入れ替える
     setTimeout(() => {
         const randomNum = Math.floor(Math.random() * 12) + 1;
         const resultSrc = `images/res${randomNum}.png`;
+
+        // 新しい画像要素を作成
+        const resultImg = document.createElement('img');
+        resultImg.src = resultSrc;
+        resultImg.style.width = "100%"; // 親要素の幅に合わせる
+        resultImg.style.display = "block";
+
+        // fortune-boxの中身をクリアして、画像だけを表示する
+        fortuneBox.innerHTML = ''; 
+        fortuneBox.appendChild(resultImg);
         
-        // ページ内に結果画像を表示
-        const resultArea = document.createElement('div');
-        resultArea.innerHTML = `
-            <div style="margin-top: 20px;">
-                <p>今日の運勢！</p>
-                <img src="${resultSrc}" style="width: 80%; max-width: 300px;">
-            </div>
-        `;
-        document.querySelector('.fortune-container').appendChild(resultArea);
-        
-        // アニメーションを元の画像に戻す（または非表示にする）
-        koalaImg.style.display = 'none';
+        // 投稿案内を表示するための要素（必要であれば）
+        const message = document.createElement('p');
+        message.innerHTML = "今日のラッキーアクション・カラーを<br>インスタグラムに投稿しよう！";
+        fortuneBox.appendChild(message);
     }, 2000);
 }

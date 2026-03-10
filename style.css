@@ -149,9 +149,14 @@ body {
    FORTUNE 用
    ================================================== */
 #fortune-box {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    margin: 20px auto;
+    width: 300px;  /* ここを好きなサイズに固定 */
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden; /* はみ出し防止 */
 }
-#fortune-box img { width: 100%; }
+
+#fortune-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* アスペクト比を保って枠に収める */
+}
