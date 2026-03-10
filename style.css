@@ -78,8 +78,8 @@ body {
 /* 各リンクの位置を「指定した配置」に合わせました */
 /* 個別のサイズ指定（％で指定すると親の大きさに合わせて自動計算されます） */
 .gallery { top: 5%; left: 8%; width:50%}
-.contact { top: 25%; right: 2%;  width:38%}
-.about { top: 28%; left: 26%; width:48% }
+.contact { top: 25%; right: 2%;  width:28%}
+.about { top: 29%; left: 26%; width:48% }
 .onlineshop { bottom: 15%; left: 3%; width:25% }
 .fortune { bottom: 10%; right: 5%;  width:25%}
 
