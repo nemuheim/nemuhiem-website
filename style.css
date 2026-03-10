@@ -3,15 +3,16 @@
    ================================================== */
 body {
     background-color: #186A49; /* 統一されたグリーン */
-    margin: 10;
+    margin: 0;
     padding: 0;
     color: white;
     font-family: 'Futura', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex;         /* フレックスボックスを使う宣言 */
+    flex-direction: column;/* 中身を縦に並べる（ヘッダー、メイン、コピーライト） */
+    justify-content: center; /* 【上下】の真ん中 */
+    align-items: center;    /* 【左右】の真ん中 */
+    min-height: 100vh;      /* 画面の高さ100%分を「最低限の高さ」として確保する */
 }
-
 .logo-link {
     text-decoration: none;
     color: white;
