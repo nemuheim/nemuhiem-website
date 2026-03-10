@@ -20,9 +20,13 @@ function startFortune() {
         fortuneBox.innerHTML = ''; 
         fortuneBox.appendChild(resultImg);
         
-        // 投稿案内を表示するための要素（必要であれば）
+        // 投稿案内を表示するための要素
         const message = document.createElement('p');
-        message.innerHTML = "今日のラッキーアクション・カラーを<br>インスタグラムに投稿しよう！";
+        message.style.marginTop = "15px"; // 画像との隙間を調整
+        message.innerHTML = `
+            今日のラッキーアクション・カラーを<br>
+            インスタグラムに投稿しよう！
+        `;
         fortuneBox.appendChild(message);
-    }, 2000);
+    }, 1800);
 }
