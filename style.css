@@ -105,6 +105,8 @@ body {
     padding-bottom: 50px;
 }
 
+.contact2 {width:100% }
+
 .profile-box, .contact-box {
     width: 200px;
     height: 200px;
@@ -113,6 +115,8 @@ body {
     border-radius: 10px;
     overflow: hidden;
 }
+
+
 
 .profile-text { text-align: left; margin-top: 30px; }
 .email-address a { color: white; text-decoration: underline; }
