@@ -1,17 +1,29 @@
 /* ==================================================
-   1. 全ページ共通
+   全ページ共通設定
    ================================================== */
 body {
-    background-color: #186A49;
+    background-color: #186A49; /* 統一されたグリーン */
     margin: 0;
     padding: 0;
     color: white;
-    font-family: sans-serif;
+    font-family: 'Futura', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.logo { font-size: 2rem; margin: 20px 0; color: white; text-decoration: none; }
+
+.logo-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin: 20px 0;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 5vw;
+    margin: 0;
+}
 
 /* ==================================================
    HOME（トップページ）用
@@ -25,43 +37,87 @@ body {
 }
 
 .room-box {
+    /* 背景画像を入れる場合 */
+    background-image: url('images/room-bg.png'); 
+    background-size: cover;
     position: relative;
     width: 80vw;
     max-width: 600px;
     height: 80vw;
     max-height: 600px;
+    /* ...その他の設定... */
+}
+  /* 背景の資格をCSSで作成する場合 
+.room-box {
+    position: relative;
+    width: 80vw;
+    max-width: 600px;
+    height: 80vw;
+    max-height: 600px;
+    background-color: #3E7C37;
     border: 2px solid white;
-    /* 背景画像をCSS側でも指定したい場合は以下のように記述 */
-    background-size: cover;
-    background-position: center;
-}
+}*/
 
-.item { 
-    position: absolute; 
-    width: 20%; 
-    cursor: pointer; 
-}
+.item { position: absolute; width: 20%; cursor: pointer; }
 .item img { width: 100%; height: auto; }
-/* 配置調整（必要に応じて数値を変更してください） */
-.about-img { top: 10%; left: 10%; }
-.gallery-img { top: 10%; left: 60%; }
-.fortune-img { top: 40%; left: 35%; }
-.contact-img { bottom: 10%; left: 10%; }
-.shop-img { bottom: 10%; left: 60%; }
+.about { top: 30%; left: 40%; }
+.gallery { top: 10%; left: 10%; }
+.onlineshop { bottom: 10%; right: 10%; }
+.fortune { bottom: 5%; left: 30%; }
+.contact { bottom: 30%; left: 10%; }
 
 /* ==================================================
-   3. 各詳細ページ用 (GALLERY, CONTACT, FORTUNE)
+   ABOUT / CONTACT 用
    ================================================== */
-main { width: 90%; max-width: 600px; text-align: center; padding: 20px; }
+.about-container {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    padding-bottom: 50px;
+}
 
-/* GALLERY用 */
-.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-.filter-btn { border: 2px solid white; background: transparent; color: white; padding: 5px 15px; border-radius: 20px; cursor: pointer; margin: 5px; }
+.profile-box, .contact-box {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-/* CONTACT用 */
-.contact-box { width: 200px; margin: 20px auto; }
-.contact-box img { width: 100%; }
+.profile-text { text-align: left; margin-top: 30px; }
+.email-address a { color: white; text-decoration: underline; }
 
-/* FORTUNE用 */
-#fortune-box { width: 200px; margin: 20px auto; cursor: pointer; }
+/* ==================================================
+   GALLERY 用
+   ================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+    width: 80vw;
+    max-width: 600px;
+}
+
+.filter-buttons { margin-bottom: 20px; }
+.filter-btn {
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* ==================================================
+   FORTUNE 用
+   ================================================== */
+#fortune-box {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    margin: 20px auto;
+}
 #fortune-box img { width: 100%; }
