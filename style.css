@@ -21,17 +21,21 @@ body {
 
 .logo {
     font-weight: bold;
-    font-size: 8vw;
+    font-size: 5vw;
     margin: 0;
 }
 
 .copyright {
-    position: absolute;
-    bottom: 10px;        /* 下から10pxの場所 */
-    left: 0;
-    width: 100%;         /* 幅を広げて中央寄せを有効にする */
+    /* position: absolute; ← これを消すかコメントアウト！ */
+    display: block;      /* ブロック要素として扱う */
+    margin-top: 20px;    /* 背景画像との間に20pxの隙間を作る */
     text-align: center;  /* 文字を中央に */
-    font-size: 5vw;   /* 少し小さく */
+    width: 100%;         /* 幅いっぱい */
+    
+    /* フォントの設定 */
+    font-family: 'Futura', sans-serif;
+    font-weight: bold;   /* BOLDにする */
+    font-size: 0.8rem;
     color: white;
 }
 
