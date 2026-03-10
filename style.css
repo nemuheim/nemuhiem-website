@@ -37,29 +37,41 @@ body {
 }
 
 /* 背景を表示する親の箱 */
+/* 親の箱（背景） */
 .room-box {
-    position: relative; /* 子要素の配置の基準点になる */
-    width: 600px;       /* 背景画像のサイズに合わせて調整 */
-    height: 600px;      /* 正方形なら幅と同じ値 */
+    position: relative; /* 子要素を絶対配置する基準 */
+    width: 80vw;        /* 画面幅の80% */
+    max-width: 600px;   /* 大きくなりすぎないように制限 */
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    margin: 0 auto;     /* 中央寄せ */
+    
     background-image: url('images/room-bg.png');
-    background-size: contain; /* 画像が全部収まるようにする */
+    background-size: contain;
     background-repeat: no-repeat;
-    margin: 0 auto;     /* 画面中央寄せ */
+    background-position: center;
 }
 
-/* 全リンク共通の設定 */
+/* リンク付き画像（item）の設定 */
 .item {
-    position: absolute; /* 親からの距離で位置を決める */
+    position: absolute; /* 親（room-box）に対して自由に配置 */
     display: block;
-    width: 100px;       /* 各アイコン画像の幅に合わせて調整 */
+    width: 20%;         /* 親の幅の20%にする（これで小さくなります） */
 }
 
-/* それぞれの具体的な位置（％で指定すると画面サイズが変わっても崩れにくいです） */
-.about { top: 10%; left: 10%; }
-.gallery { top: 10%; left: 70%; }
-.onlineshop { top: 40%; left: 40%; }
-.fortune { top: 70%; left: 10%; }
-.contact { top: 70%; left: 70%; }
+/* 中身の画像を枠にフィットさせる */
+.item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 各画像の位置（0〜100%で指定） */
+/* 各リンクの位置を「指定した配置」に合わせました */
+.gallery { top: 10%; left: 20%; }
+.contact { top: 25%; right: 20%; }
+.about { top: 40%; left: 30%; }
+.onlineshop { bottom: 20%; left: 20%; }
+.fortune { bottom: 20%; right: 20%; }
 
 /* アイコン画像が親の幅からはみ出さないように */
 .item img {
