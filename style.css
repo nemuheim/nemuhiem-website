@@ -16,12 +16,12 @@ body {
     text-decoration: none;
     color: white;
     display: block;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 .logo {
     font-weight: bold;
-    font-size: 10vw;
+    font-size: 8vw;
     margin: 0;
 }
 
@@ -31,7 +31,7 @@ body {
     left: 0;
     width: 100%;         /* 幅を広げて中央寄せを有効にする */
     text-align: center;  /* 文字を中央に */
-    font-size: 1vw;   /* 少し小さく */
+    font-size: 5vw;   /* 少し小さく */
     color: white;
 }
 
@@ -77,11 +77,11 @@ body {
 /* 各画像の位置（0〜100%で指定） */
 /* 各リンクの位置を「指定した配置」に合わせました */
 /* 個別のサイズ指定（％で指定すると親の大きさに合わせて自動計算されます） */
-.gallery { top: 10%; left: 20%; width:50%}
-.contact { top: 25%; right: 20%;  width:30%}
-.about { top: 40%; left: 30%; width:50% }
-.onlineshop { bottom: 20%; left: 20%; width:30% }
-.fortune { bottom: 20%; right: 20%;  width:30%}
+.gallery { top: 5%; left: 8%; width:50%}
+.contact { top: 25%; right: 2%;  width:38%}
+.about { top: 28%; left: 26%; width:48% }
+.onlineshop { bottom: 15%; left: 3%; width:25% }
+.fortune { bottom: 10%; right: 5%;  width:25%}
 
 
 /* ==================================================
