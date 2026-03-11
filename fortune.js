@@ -24,7 +24,7 @@ function startFortune() {
         const message = document.createElement('p');
         message.style.marginTop = "15px"; // 画像との隙間を調整
         message.innerHTML = `
-            今日のラッキーアクション・カラーを<br>
+            今日のラッキーイラストを<br>
             インスタグラムに投稿しよう！
         `;
         fortuneBox.appendChild(message);

@@ -174,3 +174,44 @@ footer .fa-brands {
     height: 100%;
     object-fit: contain; /* アスペクト比を保って枠に収める */
 }
+
+/* ==================================================
+   GALLERY / UNDER CONSTRUCTION用
+   ================================================== */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.under-construction {
+    margin: 40px 0;
+    width: 80%;
+    max-width: 400px;
+}
+
+.under-construction img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* ==================================================
+   CONTACTALLERY メールアドレス用ボタン
+   ================================================== */
+
+.mail-btn {
+    display: inline-block;          /* ボタンとして扱いやすくする */
+    padding: 10px 20px;             /* 文字周りの余白 */
+    border: 2px solid white;        /* 白い枠線 */
+    border-radius: 20px;            /* 角丸 */
+    color: white;                   /* 文字色を白に */
+    text-decoration: none;          /* 下線を消す */
+    transition: background 0.3s, color 0.3s; /* マウスを乗せた時の動き */
+}
+
+/* マウスを乗せた時のホバーエフェクト（お好みでどうぞ） */
+.mail-btn:hover {
+    background-color: white;        /* 背景を白にして */
+    color: #186A49;                 /* 文字を背景色のグリーンに */
+}
