@@ -185,6 +185,20 @@ footer .fa-brands {
     object-fit: contain; /* アスペクト比を保って枠に収める */
 }
 
+/* FORTUNEページのテキスト中央寄せ用 */
+.fortune-container {
+    text-align: center;      /* これで中の文字が全部センターになります */
+    width: 100%;             /* コンテナの幅を広げる */
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* 中の要素（divなど）を左右中央に */
+}
+
+/* もしpタグの余白が気になる場合 */
+.fortune-container p {
+    margin: 10px 0 20px 0;   /* 上下の余白調整 */
+}
+
 /* ==================================================
    GALLERY / UNDER CONSTRUCTION用
    ================================================== */
