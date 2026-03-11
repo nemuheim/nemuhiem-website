@@ -28,5 +28,5 @@ function startFortune() {
             インスタグラムに投稿しよう！
         `;
         fortuneBox.appendChild(message);
-    }, 1500);
+    }, 2000);
 }
