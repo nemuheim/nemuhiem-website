@@ -9,10 +9,20 @@ body {
     font-family: 'Futura', sans-serif;
     display: flex;         /* フレックスボックスを使う宣言 */
     flex-direction: column;/* 中身を縦に並べる（ヘッダー、メイン、コピーライト） */
-    justify-content: center; /* 【上下】の真ん中 */
     align-items: center;    /* 【左右】の真ん中 */
     min-height: 100vh;      /* 画面の高さ100%分を「最低限の高さ」として確保する */
 }
+
+/* 画面中央寄せ用の設定（Gallery以外で使う） */
+.center-layout {
+    justify-content: center; /* これを個別のクラスに移す */
+}
+
+/* ギャラリー用（上詰め）の設定 */
+.top-layout {
+    justify-content: flex-start; /* 上から順番に表示 */
+}
+
 .logo-link {
     text-decoration: none;
     color: white;
@@ -196,6 +206,47 @@ footer .fa-brands {
     height: auto;
     display: block;
 }
+
+/* ギャラリー全体の配置（中央寄せ） */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中身を左右中央に寄せる */
+    width: 100%;
+}
+
+/* グリッドの設定（スマホ用：1列） */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* スマホ時は1列 */
+    gap: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+}
+
+/* PC向けの設定（画面幅が600px以上になったら2列にする） */
+@media (min-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2列にする */
+    }
+}
+
+/* フィルタボタンの中央寄せ */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* ボタンが多い時に折り返す用 */
+    margin-bottom: 20px;
+}
+
+/* under-construction画像の中央寄せ */
+.under-construction {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
 /* ==================================================
    CONTACTALLERY メールアドレス用ボタン
    ================================================== */
