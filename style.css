@@ -390,3 +390,21 @@ hr {
     width: 100%;
     margin: 60px 0;
 }
+
+/* 全メニュー共通の補足ボックスのデザイン */
+.common-info-box {
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 少し薄めの白線 */
+    padding: 15px;
+    margin: 15px 0 25px 0;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.03); /* ほんの少し暗めの背景 */
+    border-radius: 8px;
+}
+
+.common-info-box strong {
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 5px;
+    border-bottom: 1px solid white;
+}
