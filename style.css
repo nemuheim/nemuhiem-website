@@ -279,86 +279,114 @@ footer .fa-brands {
 }
 
 /* ==================================================
-   ILLUTRATION ORDER
+   ILLUSTRATION ORDER (完全版)
    ================================================== */
 
-/* オーダープランごとのタイトル設定 */
-.order-item h4 {
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-/* プラン内の画像サイズ微調整 */
-.order-item .under-construction {
-    margin: 20px auto;
-    max-width: 300px; /* サンプル画像が大きすぎないように */
-}
-
-/* リンクボタンのスタイル調整 */
-.order-item .mail-btn {
-    display: inline-block;
-    margin-top: 15px;
-    font-size: 0.8rem;
-}
-
-/* オーダーページ全体のコンテナ調整 */
+/* 1. ページ全体のコンテナ設定 */
 .order-page-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* 全てを中央に寄せる */
+    align-items: center;    /* 子要素をすべて左右中央に配置 */
     width: 90%;
-    max-width: 700px;
+    max-width: 600px;       /* 読みやすさとスタイリッシュさを両立する幅 */
     margin: 0 auto;
-    text-align: center; /* 基本は中央寄せ */
+    text-align: center;     /* 基本の文字配置は中央 */
+    padding-bottom: 100px;
 }
 
-/* メニューごとの枠 */
+/* 2. 文章の左端を揃えるための魔法のボックス */
+.order-details {
+    text-align: left;       /* 中の文章だけを左側に揃える */
+    width: 100%;
+    max-width: 480px;       /* 文章が広がりすぎないように制限 */
+    margin: 20px auto;      /* この箱自体を中央に配置 */
+    line-height: 1.8;       /* 行間を広げて「nemuheim.」らしいゆとりを */
+    color: white;
+}
+
+/* 3. 注意事項（枠線付き） */
+.notice-box {
+    border: 1px solid white;
+    padding: 25px;
+    margin: 40px auto;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;       /* 中身は左揃え */
+    font-size: 0.85rem;
+    background-color: rgba(255, 255, 255, 0.05); /* ほんの少しだけ背景を浮かせる */
+}
+
+.notice-box h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;     /* 見出しだけ中央 */
+    border: none;
+}
+
+/* 4. メニューごとの設定 */
 .order-item {
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 100px;   /* 各メニューの間の余白 */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* ★横スクロールする画像エリア */
+.order-item h4 {
+    border-bottom: 1px solid white; /* シンプルな線 */
+    display: inline-block;          /* 文字の長さに合わせる */
+    padding: 0 20px 10px;           /* 線と文字の隙間 */
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.order-item .price {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+/* 5. スタイリッシュな横スクロール（カルーセル風） */
 .sample-slider {
     display: flex;
-    overflow-x: auto;   /* 横スクロールを有効にする */
-    gap: 15px;          /* 画像同士の隙間 */
+    overflow-x: auto;       /* 横スクロールを有効に */
+    gap: 20px;              /* 画像同士の隙間 */
     width: 100%;
-    padding: 10px 0 20px 0;
-    scroll-snap-type: x mandatory; /* スクロール時にピタッと止まる設定 */
-    -webkit-overflow-scrolling: touch; /* iPhoneでスルスル動くように */
+    padding: 10px 0 30px 0;
+    scroll-snap-type: x mandatory;     /* スワイプでピタッと止める */
+    -webkit-overflow-scrolling: touch; /* iPhoneでの滑らかな動き */
+}
+
+/* スクロールバーを隠す設定（スタイリッシュに見せるため） */
+.sample-slider::-webkit-scrollbar {
+    display: none;
+}
+.sample-slider {
+    scrollbar-width: none;
 }
 
 .sample-slider img {
-    flex: 0 0 80%;      /* 1枚の画像の幅（画面の80%分見せる） */
-    max-width: 300px;   /* 大きくなりすぎない制限 */
-    aspect-ratio: 1 / 1;
+    flex: 0 0 75%;          /* 1枚の幅。両隣を少し見せて「次がある」ことを伝える */
+    max-width: 300px;
+    aspect-ratio: 1 / 1;    /* 正方形を維持 */
     object-fit: cover;
-    border-radius: 8px;
-    scroll-snap-align: center; /* スクロール時に真ん中で止まる */
+    border-radius: 15px;    /* nemesis.の柔らかい雰囲気に合わせた角丸 */
+    scroll-snap-align: center; /* 常に中央で止まるように */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* 軽く影をつけて立体感を */
 }
 
-/* ★文章の左端を揃えるための設定 */
-.order-details {
-    text-align: left;   /* 文字だけ左揃えにする */
-    width: 100%;
-    max-width: 500px;   /* 読みやすい幅に絞る */
-    margin: 20px auto;  /* 箱自体を中央に置く */
-    line-height: 1.6;
-}
-
-/* 注意事項の枠も中央寄せしつつ中身は左揃え */
-.notice-box {
-    border: 1px solid white;
-    padding: 20px;
-    margin: 30px auto;
-    width: 100%;
-    max-width: 500px;
-    text-align: left;
+/* 6. ボタンの調整 */
+.order-item .mail-btn {
+    margin-top: 25px;
+    padding: 12px 30px;
     font-size: 0.9rem;
+}
+
+/* 区切り線（FLOWとMENUの間など） */
+hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    margin: 60px 0;
 }
