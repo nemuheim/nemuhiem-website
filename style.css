@@ -15,7 +15,7 @@ body {
 
 /* 画面中央寄せ用の設定（Gallery以外で使う） */
 .center-layout {
-    justify-content: center; /* これを個別のクラスに移す */
+    justify-content: center; 
 }
 
 /* ギャラリー用（上詰め）の設定 */
@@ -42,7 +42,6 @@ body {
     margin-bottom: 0;   /* 下の余白を消す */
     text-align: center;
     width: auto;        /* 100%からautoに変更 */
-    
     font-family: 'Futura', sans-serif;
     font-weight: bold;
     font-size: 0.8rem;
@@ -50,9 +49,9 @@ body {
 }
 
 .fa-instagram {
-  color: white; /* インスタのブランドカラーに近いピンク */
-  font-size: 24px; /* アイコンのサイズ */
-  vertical-align: middle;
+    color: white; 
+    font-size: 24px; 
+    vertical-align: middle;
 }
 
 footer {
@@ -63,10 +62,9 @@ footer {
     padding: 20px 0;        /* 上下の余白 */
 }
 
-/* アイコンを大きくしたり、色を変えたい場合 */
 footer .fa-brands {
-    font-size: 1.5rem;      /* アイコンの大きさ */
-    color: #333;           /* アイコンの色 */
+    font-size: 1.5rem;      
+    color: white;           
 }
 
 /* ==================================================
@@ -80,37 +78,29 @@ footer .fa-brands {
     align-items: center;
 }
 
-/* 背景を表示する親の箱 */
-/* 親の箱（背景） */
 .room-box {
     position: relative; /* 子要素を絶対配置する基準 */
     width: 80vw;        /* 画面幅の80% */
     max-width: 600px;   /* 大きくなりすぎないように制限 */
     aspect-ratio: 1 / 1; /* 正方形を維持 */
     margin: 0 auto;     /* 中央寄せ */
-    
     background-image: url('images/room-bg.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* リンク付き画像（item）の設定 */
 .item {
-    position: absolute; /* 親（room-box）に対して自由に配置 */
+    position: absolute; 
     display: block;
 }
 
-/* 中身の画像を枠にフィットさせる */
 .item img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* 各画像の位置（0〜100%で指定） */
-/* 各リンクの位置を「指定した配置」に合わせました */
-/* 個別のサイズ指定（％で指定すると親の大きさに合わせて自動計算されます） */
 .gallery { top: 3%; left: 48%; width:45%}
 .contact { top: 25%; right: 2%;  width:28%}
 .about { top: 30%; left: 28%; width:44% }
@@ -146,16 +136,35 @@ footer .fa-brands {
 /* ==================================================
    GALLERY 用
    ================================================== */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 20px;
-    width: 80vw;
-    max-width: 600px;
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-.filter-buttons { margin-bottom: 20px; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* スマホ時は1列 */
+    gap: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+}
+
+@media (min-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2列にする */
+    }
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    margin-bottom: 20px;
+}
+
 .filter-btn {
     border: 2px solid white;
     background: transparent;
@@ -170,132 +179,102 @@ footer .fa-brands {
    FORTUNE 用
    ================================================== */
 #fortune-box {
-    width: 300px;  /* ここを好きなサイズに固定 */
+    width: 300px;
     height: 300px;
     margin: 0 auto;
-    overflow: hidden; /* はみ出し防止 */
+    overflow: hidden; 
 }
 
 #fortune-box img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* アスペクト比を保って枠に収める */
+    object-fit: contain; 
 }
 
-/* FORTUNEページのテキスト中央寄せ用 */
 .fortune-container {
-    text-align: center;      /* これで中の文字が全部センターになります */
-    width: 100%;             /* コンテナの幅を広げる */
-    display: flex;
-    flex-direction: column;
-    align-items: center;     /* 中の要素（divなど）を左右中央に */
-}
-
-/* もしpタグの余白が気になる場合 */
-.fortune-container p {
-    margin: 10px 0 20px 0;   /* 上下の余白調整 */
-}
-
-/* ==================================================
-   GALLERY / UNDER CONSTRUCTION用
-   ================================================== */
-.gallery-container {
+    text-align: center;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
-.under-construction {
-    margin: 40px 0;
-    width: 80%;
-    max-width: 400px;
+.fortune-container p {
+    margin: 10px 0 20px 0;
 }
 
-.under-construction img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ギャラリー全体の配置（中央寄せ） */
-.gallery-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 中身を左右中央に寄せる */
-    width: 100%;
-}
-
-/* グリッドの設定（スマホ用：1列） */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* スマホ時は1列 */
-    gap: 15px;
-    padding: 20px;
-    width: 90%;
-    max-width: 800px;
-}
-
-/* PC向けの設定（画面幅が600px以上になったら2列にする） */
-@media (min-width: 600px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2列にする */
-    }
-}
-
-/* フィルタボタンの中央寄せ */
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* ボタンが多い時に折り返す用 */
-    margin-bottom: 20px;
-}
-
-/* under-construction画像の中央寄せ */
+/* ==================================================
+   UNDER CONSTRUCTION用
+   ================================================== */
 .under-construction {
     text-align: center;
     width: 100%;
     padding: 20px;
+    margin: 40px 0;
+}
+
+.under-construction img {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 /* ==================================================
-   CONTACTALLERY メールアドレス用ボタン
+   共通ボタン設定
    ================================================== */
-
 .mail-btn {
-    display: inline-block;          /* ボタンとして扱いやすくする */
-    padding: 10px 20px;             /* 文字周りの余白 */
-    border: 2px solid white;        /* 白い枠線 */
-    border-radius: 20px;            /* 角丸 */
-    color: white;                   /* 文字色を白に */
-    text-decoration: none;          /* 下線を消す */
-    transition: background 0.3s, color 0.3s; /* マウスを乗せた時の動き */
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    font-size: 0.9rem;
 }
 
-/* マウスを乗せた時のホバーエフェクト（お好みでどうぞ） */
 .mail-btn:hover {
-    background-color: white;        /* 背景を白にして */
-    color: #186A49;                 /* 文字を背景色のグリーンに */
+    background-color: white;
+    color: #186A49;
 }
 
 /* ==================================================
-   ILLUSTRATION ORDER (スマホ最適化版)
+   ILLUSTRATION ORDER 
    ================================================== */
 
-/* 1. 全体のコンテナ：左右に必ず15px程度の余白を確保 */
+/* スムーズスクロール（TOPに戻る用） */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ページ全体のコンテナ */
 .order-page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;             /* 90%から100%に変更し、paddingで調整 */
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    padding: 0 20px 100px;  /* 左右に20pxの余白を強制 */
-    box-sizing: border-box; /* 余白を幅に含める */
+    padding: 0 20px 100px;
+    box-sizing: border-box;
     text-align: center;
 }
 
-/* 2. 文章の左端を揃える箱：幅を100%にして突き抜け防止 */
+/* メインビジュアル（ABOUT等と統一） */
+.main-visual {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+.main-visual img {
+    width: 100%;
+    height: auto;
+}
+
+/* 文章の左端を揃える箱 */
 .order-details {
     text-align: left;
     width: 100%;
@@ -305,95 +284,39 @@ footer .fa-brands {
     box-sizing: border-box;
 }
 
-/* 3. 上部の大きな注意事項：width: 100%で画面内に収める */
+/* 注意事項セクション */
 .notice-box {
     border: 1px solid white;
     padding: 20px;
     margin: 30px auto;
-    width: 100%;            /* 画面幅いっぱいに広がるが、親のpaddingで止まる */
+    width: 100%;
     max-width: 500px;
     text-align: left;
     font-size: 0.85rem;
-    box-sizing: border-box; /* 枠線が外に出ないようにする魔法のコード */
+    box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* 4. メニューごとの枠 */
-.order-item {
-    width: 100%;
-    margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
+.notice-list {
+    list-style: disc; /* リストとして点を表示 */
+    padding-left: 20px;
+    margin: 0;
 }
 
-/* 5. 各メニュー内の【共通事項】ボックス：ここも突き抜け防止 */
-.common-info-box {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 15px;
-    margin: 20px 0;
-    width: 100%;            /* 必須：親の幅に合わせる */
-    font-size: 0.8rem;
+.notice-list li {
+    margin-bottom: 15px;
     line-height: 1.6;
-    background-color: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-    box-sizing: border-box; /* 必須：右側が切れるのを防ぐ */
 }
 
-/* 6. スライダー画像の設定 */
-.sample-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    width: 100%;
-    padding: 10px 0 20px 0;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-.sample-slider::-webkit-scrollbar { display: none; }
-
-.sample-slider img {
-    flex: 0 0 80%;          /* スマホで1枚を大きく見せる */
-    max-width: 300px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 12px;
-    scroll-snap-align: center;
+.sub-list {
+    list-style: "・";
+    padding-left: 15px;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    opacity: 0.9;
 }
 
-/* メニューの線 */
-.order-item h4 {
-    border-bottom: 1px solid white;
-    display: inline-block;
-    padding: 0 10px 10px;
-    margin: 40px 0 10px;
-}
-
-/* 文字を少し小さくする注釈用クラス */
-.small-note {
-    font-size: 0.75rem;
-    opacity: 0.8;
-    display: inline-block;
-    margin-top: 2px;
-}
-
-/* 価格のスタイル調整 */
-.price {
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 20px;
-}
-
-/* カスタマイズプラン内の各項目 */
-.custom-plan-item {
-    margin-top: 20px;
-    padding-left: 10px;
-    border-left: 1px solid rgba(255,255,255,0.2);
-}
-
-/* FLOWのスタイル */
+/* FLOWセクション */
 .flow-container {
     width: 100%;
     max-width: 480px;
@@ -428,36 +351,62 @@ footer .fa-brands {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* 注意事項内のリスト調整 */
-.notice-list li {
-    margin-bottom: 15px;
-    line-height: 1.6;
+/* MENUアイテム設定 */
+.order-item {
+    width: 100%;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.sub-list {
-    list-style: "・";
-    padding-left: 20px;
-    margin-top: 5px;
-    font-size: 0.9rem;
-    opacity: 0.9;
+.order-item h4 {
+    border-bottom: 1px solid white;
+    display: inline-block;
+    padding: 0 10px 10px;
+    margin: 40px 0 10px;
+    font-size: 1.1rem;
 }
 
-/* スムーズスクロールを有効にする（任意） */
-html {
-    scroll-behavior: smooth;
+/* サンプル画像スライダー（PC操作性向上） */
+.sample-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    cursor: grab; /* PCでの掴むポインタ */
+}
+.sample-slider:active { cursor: grabbing; }
+.sample-slider::-webkit-scrollbar { display: none; }
+
+.sample-slider img {
+    flex: 0 0 75%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    scroll-snap-align: center;
+    pointer-events: none; /* 画像自体を掴まないように設定 */
 }
 
-/* MENU内のリスト設定 */
+/* MENU内の箇条書きリスト */
 .menu-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 15px 0;
+    text-align: left;
 }
 
 .menu-list li {
     position: relative;
     padding-left: 1.2em;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
@@ -467,8 +416,31 @@ html {
     left: 0;
 }
 
-/* カスタマイズ項目の余白 */
+/* 注釈・価格設定 */
+.small-note {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+.price {
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+/* カスタマイズプラン用項目 */
 .custom-plan-item {
-    margin-top: 15px;
+    margin-top: 20px;
     padding-left: 10px;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    text-align: left;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid white;
+    width: 100%;
+    margin: 60px 0;
 }
