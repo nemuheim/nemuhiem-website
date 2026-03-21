@@ -279,132 +279,116 @@ footer .fa-brands {
 }
 
 /* ==================================================
-   ILLUSTRATION ORDER (完全版)
+   ILLUSTRATION ORDER (スマホ最適化版)
    ================================================== */
 
-/* 1. ページ全体のコンテナ設定 */
+/* 1. 全体のコンテナ：左右に必ず15px程度の余白を確保 */
 .order-page-container {
     display: flex;
     flex-direction: column;
-    align-items: center;    /* 子要素をすべて左右中央に配置 */
-    width: 90%;
-    max-width: 600px;       /* 読みやすさとスタイリッシュさを両立する幅 */
+    align-items: center;
+    width: 100%;             /* 90%から100%に変更し、paddingで調整 */
+    max-width: 600px;
     margin: 0 auto;
-    text-align: center;     /* 基本の文字配置は中央 */
-    padding-bottom: 100px;
+    padding: 0 20px 100px;  /* 左右に20pxの余白を強制 */
+    box-sizing: border-box; /* 余白を幅に含める */
+    text-align: center;
 }
 
-/* 2. 文章の左端を揃えるための魔法のボックス */
+/* 2. 文章の左端を揃える箱：幅を100%にして突き抜け防止 */
 .order-details {
-    text-align: left;       /* 中の文章だけを左側に揃える */
-    width: 100%;
-    max-width: 480px;       /* 文章が広がりすぎないように制限 */
-    margin: 20px auto;      /* この箱自体を中央に配置 */
-    line-height: 1.8;       /* 行間を広げて「nemuheim.」らしいゆとりを */
-    color: white;
-}
-
-/* 3. 注意事項（枠線付き） */
-.notice-box {
-    border: 1px solid white;
-    padding: 25px;
-    margin: 40px auto;
+    text-align: left;
     width: 100%;
     max-width: 500px;
-    text-align: left;       /* 中身は左揃え */
+    margin: 20px auto;
+    line-height: 1.8;
+    box-sizing: border-box;
+}
+
+/* 3. 上部の大きな注意事項：width: 100%で画面内に収める */
+.notice-box {
+    border: 1px solid white;
+    padding: 20px;
+    margin: 30px auto;
+    width: 100%;            /* 画面幅いっぱいに広がるが、親のpaddingで止まる */
+    max-width: 500px;
+    text-align: left;
     font-size: 0.85rem;
-    background-color: rgba(255, 255, 255, 0.05); /* ほんの少しだけ背景を浮かせる */
+    box-sizing: border-box; /* 枠線が外に出ないようにする魔法のコード */
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-.notice-box h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    text-align: center;     /* 見出しだけ中央 */
-    border: none;
-}
-
-/* 4. メニューごとの設定 */
+/* 4. メニューごとの枠 */
 .order-item {
     width: 100%;
-    margin-bottom: 100px;   /* 各メニューの間の余白 */
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
 
-.order-item h4 {
-    border-bottom: 1px solid white; /* シンプルな線 */
-    display: inline-block;          /* 文字の長さに合わせる */
-    padding: 0 20px 10px;           /* 線と文字の隙間 */
-    margin-top: 50px;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.order-item .price {
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-    opacity: 0.9;
-}
-
-/* 5. スタイリッシュな横スクロール（カルーセル風） */
-.sample-slider {
-    display: flex;
-    overflow-x: auto;       /* 横スクロールを有効に */
-    gap: 20px;              /* 画像同士の隙間 */
-    width: 100%;
-    padding: 10px 0 30px 0;
-    scroll-snap-type: x mandatory;     /* スワイプでピタッと止める */
-    -webkit-overflow-scrolling: touch; /* iPhoneでの滑らかな動き */
-}
-
-/* スクロールバーを隠す設定（スタイリッシュに見せるため） */
-.sample-slider::-webkit-scrollbar {
-    display: none;
-}
-.sample-slider {
-    scrollbar-width: none;
-}
-
-.sample-slider img {
-    flex: 0 0 75%;          /* 1枚の幅。両隣を少し見せて「次がある」ことを伝える */
-    max-width: 300px;
-    aspect-ratio: 1 / 1;    /* 正方形を維持 */
-    object-fit: cover;
-    border-radius: 15px;    /* nemesis.の柔らかい雰囲気に合わせた角丸 */
-    scroll-snap-align: center; /* 常に中央で止まるように */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* 軽く影をつけて立体感を */
-}
-
-/* 6. ボタンの調整 */
-.order-item .mail-btn {
-    margin-top: 25px;
-    padding: 12px 30px;
-    font-size: 0.9rem;
-}
-
-/* 区切り線（FLOWとMENUの間など） */
-hr {
-    border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    width: 100%;
-    margin: 60px 0;
-}
-
-/* 全メニュー共通の補足ボックスのデザイン */
+/* 5. 各メニュー内の【共通事項】ボックス：ここも突き抜け防止 */
 .common-info-box {
-    border: 1px solid rgba(255, 255, 255, 0.3); /* 少し薄めの白線 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 15px;
-    margin: 15px 0 25px 0;
+    margin: 20px 0;
+    width: 100%;            /* 必須：親の幅に合わせる */
     font-size: 0.8rem;
     line-height: 1.6;
-    background-color: rgba(255, 255, 255, 0.03); /* ほんの少し暗めの背景 */
+    background-color: rgba(255, 255, 255, 0.03);
     border-radius: 8px;
+    box-sizing: border-box; /* 必須：右側が切れるのを防ぐ */
 }
 
-.common-info-box strong {
-    font-size: 0.85rem;
-    display: inline-block;
-    margin-bottom: 5px;
+/* 6. スライダー画像の設定 */
+.sample-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.sample-slider::-webkit-scrollbar { display: none; }
+
+.sample-slider img {
+    flex: 0 0 80%;          /* スマホで1枚を大きく見せる */
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    scroll-snap-align: center;
+}
+
+/* メニューの線 */
+.order-item h4 {
     border-bottom: 1px solid white;
+    display: inline-block;
+    padding: 0 10px 10px;
+    margin: 40px 0 10px;
+}
+
+/* 文字を少し小さくする注釈用クラス */
+.small-note {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+/* 価格のスタイル調整 */
+.price {
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+}
+
+/* カスタマイズプラン内の各項目 */
+.custom-plan-item {
+    margin-top: 20px;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255,255,255,0.2);
 }
