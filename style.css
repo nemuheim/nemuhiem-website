@@ -277,3 +277,28 @@ footer .fa-brands {
     background-color: white;        /* 背景を白にして */
     color: #186A49;                 /* 文字を背景色のグリーンに */
 }
+
+/* ==================================================
+   ILLUTRATION ORDER
+   ================================================== */
+
+/* オーダープランごとのタイトル設定 */
+.order-item h4 {
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* プラン内の画像サイズ微調整 */
+.order-item .under-construction {
+    margin: 20px auto;
+    max-width: 300px; /* サンプル画像が大きすぎないように */
+}
+
+/* リンクボタンのスタイル調整 */
+.order-item .mail-btn {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.8rem;
+}
