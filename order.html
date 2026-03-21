@@ -17,8 +17,8 @@
     <main class="order-page-container">
         <h2>Illustration Order</h2>
 
-        <div class="main-visual">
-            <img src="images/under-construction.png" alt="Illustration Order">
+        <div class="profile-box">
+            <img src="images/under-construction.png" class="profile" alt="Illustration Order">
         </div>
 
         <div class="order-details">
@@ -95,10 +95,14 @@
         <div class="order-item">
             <h4>①似顔絵画像のカラー化</h4>
             <p class="price">価格 500円 / BASE価格 650円</p>
-            <div class="sample-slider">
-                <img src="images/under-construction.png" alt="Sample 1">
-                <img src="images/under-construction.png" alt="Sample 2">
-                <img src="images/under-construction.png" alt="Sample 3">
+            <div class="slider-outer">
+                <button class="nav-btn prev" onclick="scrollSlider(this, -1)">＜</button>
+                <div class="sample-slider">
+                    <img src="images/under-construction.png" alt="Sample 1">
+                    <img src="images/under-construction.png" alt="Sample 2">
+                    <img src="images/under-construction.png" alt="Sample 3">
+                </div>
+                <button class="nav-btn next" onclick="scrollSlider(this, 1)">＞</button>
             </div>
             <div class="order-details">
                 <p>店頭で描いた白黒似顔絵の色付け</p>
@@ -115,10 +119,14 @@
         <div class="order-item">
             <h4>②アイコンイラスト</h4>
             <p class="price">価格 2,000円 / BASE価格 2,200円</p>
-            <div class="sample-slider">
-                <img src="images/under-construction.png" alt="Sample 1">
-                <img src="images/under-construction.png" alt="Sample 2">
-                <img src="images/under-construction.png" alt="Sample 3">
+            <div class="slider-outer">
+                <button class="nav-btn prev" onclick="scrollSlider(this, -1)">＜</button>
+                <div class="sample-slider">
+                    <img src="images/under-construction.png" alt="Sample 1">
+                    <img src="images/under-construction.png" alt="Sample 2">
+                    <img src="images/under-construction.png" alt="Sample 3">
+                </div>
+                <button class="nav-btn next" onclick="scrollSlider(this, 1)">＞</button>
             </div>
             <div class="order-details">
                 <p>正方形のバストアップカラーイラスト</p>
@@ -135,10 +143,14 @@
         <div class="order-item">
             <h4>③全身イラスト（1人）</h4>
             <p class="price">価格 3,500円 / BASE価格 3,850円</p>
-            <div class="sample-slider">
-                <img src="images/under-construction.png" alt="Sample 1">
-                <img src="images/under-construction.png" alt="Sample 2">
-                <img src="images/under-construction.png" alt="Sample 3">
+            <div class="slider-outer">
+                <button class="nav-btn prev" onclick="scrollSlider(this, -1)">＜</button>
+                <div class="sample-slider">
+                    <img src="images/under-construction.png" alt="Sample 1">
+                    <img src="images/under-construction.png" alt="Sample 2">
+                    <img src="images/under-construction.png" alt="Sample 3">
+                </div>
+                <button class="nav-btn next" onclick="scrollSlider(this, 1)">＞</button>
             </div>
             <div class="order-details">
                 <p>3：4の縦長方形の全身カラーイラスト（1名分）</p>
@@ -155,10 +167,14 @@
         <div class="order-item">
             <h4>④全身イラスト（2人）</h4>
             <p class="price">価格 6,000円 / BASE価格 6,600円</p>
-            <div class="sample-slider">
-                <img src="images/under-construction.png" alt="Sample 1">
-                <img src="images/under-construction.png" alt="Sample 2">
-                <img src="images/under-construction.png" alt="Sample 3">
+            <div class="slider-outer">
+                <button class="nav-btn prev" onclick="scrollSlider(this, -1)">＜</button>
+                <div class="sample-slider">
+                    <img src="images/under-construction.png" alt="Sample 1">
+                    <img src="images/under-construction.png" alt="Sample 2">
+                    <img src="images/under-construction.png" alt="Sample 3">
+                </div>
+                <button class="nav-btn next" onclick="scrollSlider(this, 1)">＞</button>
             </div>
             <div class="order-details">
                 <p>3：4の縦長方形の全身カラーイラスト（2名分）</p>
@@ -207,5 +223,18 @@
             <i class="fa-brands fa-instagram"></i>
         </a>
     </footer>
+
+    <script>
+    function scrollSlider(button, direction) {
+        // ボタンの親要素(slider-outer)の中にあるスライダーを探す
+        const slider = button.parentElement.querySelector('.sample-slider');
+        // 移動距離（画像1枚分程度）
+        const scrollAmount = 250; 
+        slider.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+    </script>
 </body>
 </html>
