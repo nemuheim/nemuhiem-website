@@ -37,15 +37,14 @@ body {
 }
 
 .copyright {
-    /* position: absolute; ← これを消すかコメントアウト！ */
-    display: block;      /* ブロック要素として扱う */
-    margin-top: 20px;    /* 背景画像との間に20pxの隙間を作る */
-    text-align: center;  /* 文字を中央に */
-    width: 100%;         /* 幅いっぱい */
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 0;   /* 下の余白を消す */
+    text-align: center;
+    width: auto;        /* 100%からautoに変更 */
     
-    /* フォントの設定 */
     font-family: 'Futura', sans-serif;
-    font-weight: bold;   /* BOLDにする */
+    font-weight: bold;
     font-size: 0.8rem;
     color: white;
 }
@@ -112,12 +111,12 @@ footer .fa-brands {
 /* 各画像の位置（0〜100%で指定） */
 /* 各リンクの位置を「指定した配置」に合わせました */
 /* 個別のサイズ指定（％で指定すると親の大きさに合わせて自動計算されます） */
-.gallery { top: 4%; left: 24%; width:45%}
+.gallery { top: 3%; left: 48%; width:45%}
 .contact { top: 25%; right: 2%;  width:28%}
-.about { top: 29%; left: 26%; width:48% }
+.about { top: 30%; left: 28%; width:44% }
 .onlineshop { bottom: 15%; left: 3%; width:25% }
 .fortune { bottom: 10%; right: 5%;  width:25%}
-.order { top: 5%; left: 5%;  width:25%}
+.order { top: 3.5%; left: 2%;  width:42%}
 
 /* ==================================================
    ABOUT / CONTACT 用
