@@ -392,3 +392,57 @@ footer .fa-brands {
     padding-left: 10px;
     border-left: 1px solid rgba(255,255,255,0.2);
 }
+
+/* FLOWのスタイル */
+.flow-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 40px auto;
+}
+
+.flow-step {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.02);
+    text-align: left;
+}
+
+.flow-step strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.flow-step p {
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* 注意事項内のリスト調整 */
+.notice-list li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.sub-list {
+    list-style: "・";
+    padding-left: 20px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* スムーズスクロールを有効にする（任意） */
+html {
+    scroll-behavior: smooth;
+}
