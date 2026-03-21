@@ -302,3 +302,63 @@ footer .fa-brands {
     margin-top: 15px;
     font-size: 0.8rem;
 }
+
+/* オーダーページ全体のコンテナ調整 */
+.order-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 全てを中央に寄せる */
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center; /* 基本は中央寄せ */
+}
+
+/* メニューごとの枠 */
+.order-item {
+    width: 100%;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ★横スクロールする画像エリア */
+.sample-slider {
+    display: flex;
+    overflow-x: auto;   /* 横スクロールを有効にする */
+    gap: 15px;          /* 画像同士の隙間 */
+    width: 100%;
+    padding: 10px 0 20px 0;
+    scroll-snap-type: x mandatory; /* スクロール時にピタッと止まる設定 */
+    -webkit-overflow-scrolling: touch; /* iPhoneでスルスル動くように */
+}
+
+.sample-slider img {
+    flex: 0 0 80%;      /* 1枚の画像の幅（画面の80%分見せる） */
+    max-width: 300px;   /* 大きくなりすぎない制限 */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    scroll-snap-align: center; /* スクロール時に真ん中で止まる */
+}
+
+/* ★文章の左端を揃えるための設定 */
+.order-details {
+    text-align: left;   /* 文字だけ左揃えにする */
+    width: 100%;
+    max-width: 500px;   /* 読みやすい幅に絞る */
+    margin: 20px auto;  /* 箱自体を中央に置く */
+    line-height: 1.6;
+}
+
+/* 注意事項の枠も中央寄せしつつ中身は左揃え */
+.notice-box {
+    border: 1px solid white;
+    padding: 20px;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    font-size: 0.9rem;
+}
