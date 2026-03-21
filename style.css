@@ -112,12 +112,12 @@ footer .fa-brands {
 /* 各画像の位置（0〜100%で指定） */
 /* 各リンクの位置を「指定した配置」に合わせました */
 /* 個別のサイズ指定（％で指定すると親の大きさに合わせて自動計算されます） */
-.gallery { top: 5%; left: 8%; width:50%}
+.gallery { top: 4%; left: 24%; width:45%}
 .contact { top: 25%; right: 2%;  width:28%}
 .about { top: 29%; left: 26%; width:48% }
 .onlineshop { bottom: 15%; left: 3%; width:25% }
 .fortune { bottom: 10%; right: 5%;  width:25%}
-
+.order { top: 5%; left: 5%;  width:25%}
 
 /* ==================================================
    ABOUT / CONTACT 用
